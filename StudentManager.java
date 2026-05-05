@@ -26,17 +26,17 @@ public class StudentManager {
         System.out.println("Total Students: " + students.size());
     }
 
-    //Search student
-    public void searchStudents(String name){
-        boolean found = false;
-        
-        for(Student s: students){
-            if(s.name.equalsIgnoreCase(name)){
-                s.display();
-                found = true;
-            }
-        } if (!found){
-            System.out.println("Student Not Found !");
-        }
+    // Delete student
+     public void deleteStudents(String name){
+         boolean removed = false;
+
+         for(int i=0; i < students.size(); i++){
+             if(students.get(i).name.equalsIgnoreCase(name)){
+                 students.remove(i);
+                 System.out.println("Student removed !");
+                 removed = true;
+                 break;     
+             }
+         }
     }
 }
