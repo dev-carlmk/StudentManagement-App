@@ -10,7 +10,9 @@ public class Main {
             System.out.println("\n--- Student Management System ---");
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
-            System.out.println("3. Exit");
+            System.out.println("3. Count Students");
+            System.out.println("4. Search Students");
+            System.out.println("5. Delete Students");
 
             System.out.print("Choose option: ");
             int choice = input.nextInt();
@@ -34,11 +36,17 @@ public class Main {
                 manager.viewStudents();
 
             } else if(choice == 3){
-                System.out.println("Exiting...");
-                break;
+                manager.countStudents();
 
-            } else {
-                System.out.println("Invalid choice.");
+            } else if(choice == 4) {
+                System.out.println("Enter Name to Search: ");
+                String name = input.nextLine();
+                manager.searchStudents(name);
+
+            }else if (choice == 5){
+                System.out.println("Enter Name to Delete: ");
+                String name = input.nextLine();
+                manager.searchStudents(name);
             }
         }
         input.close();
