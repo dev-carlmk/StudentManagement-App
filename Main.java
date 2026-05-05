@@ -12,7 +12,8 @@ public class Main {
             System.out.println("2. View Students");
             System.out.println("3. Count Students");
             System.out.println("4. Delete Students");
-            System.out.println("5. Exiting.....");
+            System.out.println("5. Search Students");
+            System.out.println("6. Exiting.....");
 
             System.out.print("Choose option: ");
             int choice = input.nextInt();
@@ -43,7 +44,12 @@ public class Main {
                 String name = input.nextLine();
                 manager.deleteStudents(name);
             
-            }else if(choice == 5){
+            }else if(choice == 5) {
+                 System.out.println("Enter Name to Search: ");
+                 String name = input.nextLine();
+                 manager.searchStudents(name);
+
+            } else if(choice == 6){
                 System.out.println("Exiting....");
             
             } else{
