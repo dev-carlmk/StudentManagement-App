@@ -39,4 +39,38 @@ public class StudentManager {
              }
          }
     }
+
+    //Search student
+     public void searchStudents(String name){
+         boolean found = false;
+        
+         for(Student s: students){
+             if(s.name.equalsIgnoreCase(name)){
+                 s.display();
+                 found = true;
+             }
+         } if (!found){
+             System.out.println("Student Not Found !");
+         }
+     }
+
+     // Update Student
+     public void updateStudent(String name){
+        boolean found = false;
+
+        for(Student s: students){
+            if(s.name.equalsIgnoreCase(name)){
+                s.name = "Updated Name";
+                s.age = 99;
+                s.course = "Updates Course";
+
+                System.out.println("Student Updated !");
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            System.out.println("Student Not Found !");
+        }
+     }
 }
