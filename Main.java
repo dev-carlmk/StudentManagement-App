@@ -13,7 +13,8 @@ public class Main {
             System.out.println("3. Count Students");
             System.out.println("4. Delete Students");
             System.out.println("5. Search Students");
-            System.out.println("6. Exiting.....");
+            System.out.println("6. Update Students Info");
+            System.out.println("7. Exiting.....");
 
             System.out.print("Choose option: ");
             int choice = input.nextInt();
@@ -50,6 +51,11 @@ public class Main {
                  manager.searchStudents(name);
 
             } else if(choice == 6){
+                System.out.println("Enter Name to Update: ");
+                String name = input.nextLine();
+                manager.updateStudent(name);
+            
+            } else if(choice == 7){
                 System.out.println("Exiting....");
             
             } else{
