@@ -14,11 +14,11 @@ public class Main {
             System.out.println("4. Delete Students");
             System.out.println("5. Search Students");
             System.out.println("6. Update Students Info");
-            System.out.println("7. Exiting.....");
+            System.out.println("7. Exit");
 
             System.out.print("Choose option: ");
             int choice = input.nextInt();
-            input.nextLine(); // clear buffer
+            input.nextLine();
 
             if(choice == 1){
                 System.out.print("Enter name: ");
@@ -40,28 +40,26 @@ public class Main {
             } else if(choice == 3){
                 manager.countStudents();
 
-            }else if (choice == 4){
-                System.out.println("Enter Name to Delete: ");
-                String name = input.nextLine();
-                manager.deleteStudents(name);
-            
-            }else if(choice == 5) {
-                 System.out.println("Enter Name to Search: ");
-                 String name = input.nextLine();
-                 manager.searchStudents(name);
+            } else if(choice == 4){
+                System.out.print("Enter Name: ");
+                manager.deleteStudents(input.nextLine());
+
+            } else if(choice == 5){
+                System.out.print("Enter Name: ");
+                manager.searchStudents(input.nextLine());
 
             } else if(choice == 6){
-                System.out.println("Enter Name to Update: ");
-                String name = input.nextLine();
-                manager.updateStudent(name);
-            
+                System.out.print("Enter Name: ");
+                manager.updateStudent(input.nextLine());
+
             } else if(choice == 7){
-                System.out.println("Exiting....");
-            
-            } else{
-                System.out.println("Invalid Input");
+                break;
+
+            } else {
+                System.out.println("Invalid input");
             }
-        input.close();
         }
+
+        input.close();
     }
 }
